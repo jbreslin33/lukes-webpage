@@ -10,20 +10,13 @@ var realAnswer = 0;
 var userAnswer = '';
 
 
-function makeQueston()
-{
-
-
-
-
-}
 </script>
 </head>
 <body>
 
 <p>Multiply!</p>
 
-<p id="question_paragraph">Question: 2 X 3=</p>
+<p id="question_paragraph">Question:</p>
 
 
 
@@ -42,6 +35,7 @@ function makeQueston()
 <button id="myBtn">Try it</button>
 
 <script>
+makeQuestion();
 
 
 
@@ -118,6 +112,14 @@ function addToVariable(numberToAdd)
     userAnswer = userAnswer + numberToAdd;
     document.getElementById("answer_paragraph").innerHTML = 'Answer:' + userAnswer;
 };
+
+function makeQuestion()
+{
+	a=Math.floor((Math.random()*10)+1);
+	b=Math.floor((Math.random()*10)+1);
+	realAnswer=a*b;
+        document.getElementById('question_paragraph').innerHTML = 'Question: ' + a + ' x ' + b + ' =';    
+}
 
 </script>
 
