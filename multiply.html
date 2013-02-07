@@ -9,7 +9,6 @@ var totalIncorrect = 0;
 var realAnswer = 0;
 var userAnswer = '';
 
-
 </script>
 </head>
 <body>
@@ -17,8 +16,6 @@ var userAnswer = '';
 <p>Multiply!</p>
 
 <p id="question_paragraph">Question:</p>
-
-
 
 <button id="but_0">0</button>
 <button id="but_1">1</button>
@@ -36,8 +33,6 @@ var userAnswer = '';
 
 <script>
 makeQuestion();
-
-
 
 document.getElementById("but_0").onclick=function()
 {
@@ -97,12 +92,13 @@ function evaluateAnswer()
         document.getElementById("incorrect_paragraph").innerHTML = 'Incorrect:' + totalIncorrect;    
 
     }
-    reset()
+    reset();
      
 };
 
 function reset()
 {
+	makeQuestion();
      userAnswer = '';
      document.getElementById("answer_paragraph").innerHTML = 'Answer:';
 }
