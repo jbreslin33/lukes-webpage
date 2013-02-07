@@ -8,6 +8,7 @@ var totalCorrect = 0;
 var totalIncorrect = 0;
 var realAnswer = 0;
 var userAnswer = '';
+var totalNeeded = 10;
 
 </script>
 </head>
@@ -98,6 +99,10 @@ function evaluateAnswer()
 
 function reset()
 {
+	if (totalNeeded == totalCorrect)
+	{
+		alert('Way to go you answered 10 correct');
+	}
 	makeQuestion();
      userAnswer = '';
      document.getElementById("answer_paragraph").innerHTML = 'Answer:';
