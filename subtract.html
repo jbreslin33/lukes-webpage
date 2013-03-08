@@ -14,7 +14,7 @@ var totalNeeded = 10;
 </head>
 <body>
 
-<p>add!</p>
+<p>Multiply!</p>
 
 <p id="question_paragraph">Question:</p>
 
@@ -118,8 +118,8 @@ function makeQuestion()
 {
 	a=Math.floor((Math.random()*10)+1);
 	b=Math.floor((Math.random()*10)+1);
-	realAnswer=a+b;
-        document.getElementById('question_paragraph').innerHTML = 'Question: ' + a + ' + ' + b + ' =';    
+	realAnswer=a*b;
+        document.getElementById('question_paragraph').innerHTML = 'Question: ' + a + ' x ' + b + ' =';    
 }
 
 </script>
