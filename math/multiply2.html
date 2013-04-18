@@ -9,7 +9,9 @@ var totalIncorrect = 0;
 var realAnswer = 0;
 var userAnswer = '';
 var totalNeeded = 10;
-
+var quizStartTime = 0;
+var quizEndTime = 0;
+var quizTotalTime
 </script>
 </head>
 <body>
@@ -33,6 +35,7 @@ var totalNeeded = 10;
 
 
 <script>
+startQuizClock();
 makeQuestion();
 
 document.getElementById("but_0").onclick=function()
@@ -103,6 +106,7 @@ function reset()
 	{
 		alert('Way to go you answered 10 correct');
 	}
+	setQuizEndTime();
 	makeQuestion();
      userAnswer = '';
      document.getElementById("answer_paragraph").innerHTML = 'Answer:';
@@ -122,10 +126,26 @@ function makeQuestion()
         document.getElementById('question_paragraph').innerHTML = 'Question: ' + a + ' x ' + b + ' =';    
 }
 
+function startQuizTime()
+{
+	var d = new Date();
+	quizStartTime = d.getTime();
+        //document.getElementById('quiz_start_time').innerHTML = 'Start Time: ' + quizStartTime; 
+}
+
+function setQuizEndTime()
+{
+	var d = new Date();
+	var currentTime = d.getTime();
+	quizTotalTime = currentTime - quizStartTime;
+        document.getElementById('quiz_total_time').innerHTML = 'Quiz Total Time: ' + quizTotalTime; 
+	
+}
 </script>
 
 <p id="answer_paragraph">Answer:</p>
 <p id="correct_paragraph">Correct:</p>
 <p id="incorrect_paragraph">Incorrect:</p>
+<p id="quiz_start_time">Start Time:</p>
 </body>
 </html>
